@@ -1,74 +1,108 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>만다라트</title>
-<style>
-body {
-  font-family: sans-serif;
-  text-align: center;
-  margin: 40px;
-}
+  <meta charset="UTF-8">
+  <title>My Mandalart</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      text-align: center;
+    }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 120px);
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 40px;
-}
+    header {
+      padding: 30px 20px 10px 20px;
+    }
 
-.cell {
-  border: 1px solid #ccc;
-  padding: 30px 10px;
-}
+    h1 {
+      margin-bottom: 10px;
+    }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 120px);
-  gap: 10px;
-  justify-content: center;
-}
-button {
-  padding: 12px;
-  cursor: pointer;
-}
-</style>
+    .sheet-container {
+      width: 95%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: none;
+    }
+
+    .button-group {
+      margin: 30px 0;
+    }
+
+    .category-buttons {
+      margin: 20px 0 50px 0;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #4a90e2;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #357ab8;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>만다라트</h1>
+  <header>
+    <h1>🌱 My Mandalart</h1>
+    <p>나만의 목표 관리 보드</p>
+  </header>
 
-<!-- 임시 표 -->
-<div class="grid">
-  <div class="cell">공부</div>
-  <div class="cell">성적</div>
-  <div class="cell">책</div>
-  <div class="cell">돈</div>
-  <div class="cell">다이어트</div>
-  <div class="cell">게임</div>
-  <div class="cell">인간관계</div>
-  <div class="cell">꿈</div>
-  <div class="cell">중앙 목표</div>
-</div>
+  <div class="sheet-container">
+    <iframe 
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQrHuwQxQnXo3GOjnbNHg9u9zqVunxPQq_ETzqgbt2IZa2RRRivrRAuBdXDzDkCJsS3jfcILjdRe1Z0/pubhtml?widget=true&headers=false">
+    </iframe>
+  </div>
 
-<div class="buttons">
-  <button onclick="go('공부')">공부</button>
-  <button onclick="go('성적')">성적</button>
-  <button onclick="go('책')">책</button>
-  <button onclick="go('돈')">돈</button>
-  <button onclick="go('다이어트')">다이어트</button>
-  <button onclick="go('게임')">게임</button>
-  <button onclick="go('인간관계')">인간관계</button>
-  <button onclick="go('꿈')">꿈</button>
-</div>
+  <div class="button-group">
+    <a href="https://docs.google.com/spreadsheets/d/1H09SAhxXglx0QOi1Lre48u1KfyRLwBxsBJ7M8DW0vik/edit" target="_blank">
+      <button>구글시트 수정하기</button>
+    </a>
 
-<script>
-function go(name){
-  location.href = "category.html?name=" + encodeURIComponent(name);
-}
-</script>
+    <a href="memo.html">
+      <button>메모 페이지로 이동</button>
+    </a>
+  </div>
+
+  <!-- 🔥 여기부터 소범위 버튼 추가 -->
+  <div class="category-buttons">
+    <h2>소범위 선택</h2>
+
+    <button onclick="go('공부')">공부</button>
+    <button onclick="go('성적')">성적</button>
+    <button onclick="go('책')">책</button>
+    <button onclick="go('돈')">돈</button>
+    <button onclick="go('다이어트')">다이어트</button>
+    <button onclick="go('게임')">게임</button>
+    <button onclick="go('인간관계')">인간관계</button>
+    <button onclick="go('꿈')">꿈</button>
+  </div>
+
+  <script>
+    function go(name){
+      location.href = "category.html?name=" + encodeURIComponent(name);
+    }
+  </script>
 
 </body>
 </html>
